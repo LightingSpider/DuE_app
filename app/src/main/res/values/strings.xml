@@ -1,0 +1,38 @@
+<resources>
+    <string name="app_name">DuE</string>
+    <string name="LogIn">LOG IN</string>
+    <string name="Create">CREATE ACCOUNT</string>
+    <string name="Already">Already a user?</string>
+    <string name="New">New to Due?</string>
+    <string name="todo">TODO</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="loginfb">LOGIN WITH FACEBOOK</string>
+    <string name="logingoogle">LOGIN WITH GOOGLE</string>
+    <string name="policy"><![CDATA[I agree to the Privacy & Cookie Policy and Terms & Conditions.]]></string>
+    <string name="news">I\'d like to receive news by Email.</string>
+    <string name="register">REGISTER</string>
+    <string name="or2">------------------------------------------- OR -------------------------------------------</string>
+    <string name="orjoin2">------------------------------------- Or join with -------------------------------------</string>
+    <string name="facebook">FACEBOOK</string>
+    <string name="google">GOOGLE</string>
+    <string name="logg">Login to Due</string>
+    <string name="next">NEXT</string>
+    <string name="instaacc">Instagram Account</string>
+    <string name="interestedin">Interested in*</string>
+    <string name="fbacc">Facebook Account</string>
+    <string name="name">Name*</string>
+    <string name="setupyourprofile">Set up Your Profile</string>
+    <string name="gender1">Gender*</string>
+    <string name="age">Age*</string>
+    <string name="Irene">Irene</string>
+    <string name="chatintro">"You two are in Bronco right now! "</string>
+    <string name="chatintro2">Go find each other ;)</string>
+    <string name="hello">Hellooo</string>
+    <string name="hey">Hey</string>
+    <string name="chaaat">I am sitting next to the door, I would like to meet you ;)</string>
+    <string name="cc">Haha I am coming to find you ..</string>
+    <string name="type">Type a message</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>
