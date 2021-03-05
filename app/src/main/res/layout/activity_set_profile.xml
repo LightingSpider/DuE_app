@@ -22,7 +22,7 @@
         app:titleTextColor="#FFFFFF" />
 
     <Button
-        android:id="@+id/button_second7"
+        android:id="@+id/btnnext"
         android:layout_width="360dp"
         android:layout_height="50dp"
         android:layout_marginTop="50dp"
@@ -146,7 +146,7 @@
         android:layout_marginTop="28dp"
         android:text="@string/setupyourprofile"
         android:textColor="#FFFFFF"
-        android:textSize="28sp"
+        android:textSize="26sp"
         android:textStyle="normal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.143"

@@ -8,7 +8,7 @@
     tools:context=".CreateAccount">
 
     <Button
-        android:id="@+id/button_second6"
+        android:id="@+id/btngoogle"
         android:layout_width="360dp"
         android:layout_height="50dp"
         android:layout_marginTop="36dp"
@@ -21,10 +21,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.509"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/button_second5" />
+        app:layout_constraintTop_toBottomOf="@id/btnfb" />
 
     <Button
-        android:id="@+id/button_second5"
+        android:id="@+id/btnfb"
         android:layout_width="360dp"
         android:layout_height="50dp"
         android:layout_marginTop="46dp"

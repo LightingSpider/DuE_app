@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_mylogo_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.DuE">
-        <activity android:name=".HomePage"></activity>
+        <activity android:name=".ChooseInterests"></activity>
+        <activity android:name=".HomePage" />
         <activity android:name=".ChatRoom" />
         <activity android:name=".SetProfile" />
         <activity android:name=".CreateAccount" />

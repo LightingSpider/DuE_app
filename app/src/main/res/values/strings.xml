@@ -35,4 +35,18 @@
     <string name="type">Type a message</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="what_excites_you">What excites you?</string>
+    <string name="animals">Animals</string>
+    <string name="sports">Sports</string>
+    <string name="traveling">Traveling</string>
+    <string name="books">Books</string>
+    <string name="movies">Movies</string>
+    <string name="dancing">Dancing</string>
+    <string name="cooking">Cooking</string>
+    <string name="fashion">Fashion</string>
+    <string name="politics">Politics</string>
+    <string name="volunteering">Volunteering</string>
+    <string name="environment">Environment</string>
+    <string name="spirituality">Spirituality</string>
+    <string name="photography">Photography</string>
 </resources>
