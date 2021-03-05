@@ -49,4 +49,9 @@
     <string name="environment">Environment</string>
     <string name="spirituality">Spirituality</string>
     <string name="photography">Photography</string>
+
+    <string-array name="genders_array">
+        <item>Male</item>
+        <item>Female</item>
+    </string-array>
 </resources>
