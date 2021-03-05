@@ -3,6 +3,7 @@
     package="com.example.due">
 
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
 
     <application
         android:allowBackup="true"
@@ -11,7 +12,15 @@
         android:roundIcon="@mipmap/ic_launcher_mylogo_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.DuE">
-        <activity android:name=".AccountReady"></activity>
+        <activity android:name=".AskPermissionLoco" />
+        <activity android:name=".SplashScreen">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".AccountReady" />
         <activity android:name=".ChoosePicture" />
         <activity android:name=".ChooseInterests" />
         <activity android:name=".HomePage" />
@@ -19,13 +28,7 @@
         <activity android:name=".SetProfile" />
         <activity android:name=".CreateAccount" />
         <activity android:name=".LogIn" />
-        <activity android:name=".MainActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+        <activity android:name=".MainActivity" />
     </application>
 
 </manifest>
