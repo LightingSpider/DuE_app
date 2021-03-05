@@ -1,9 +1,11 @@
 package com.example.due
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.view.WindowManager
+import android.widget.Button
 import android.widget.CheckBox
 
 class ChooseInterests : AppCompatActivity() {
@@ -11,6 +13,12 @@ class ChooseInterests : AppCompatActivity() {
         window.setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN)
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_choose_interests)
+
+        val button1 = findViewById<Button>(R.id.btn_internext)
+        button1.setOnClickListener {
+            val intent1 = Intent(this,ChoosePicture::class.java)
+            startActivity(intent1)
+        }
     }
     fun onCheckboxClicked(view: View) {
         if (view is CheckBox) {

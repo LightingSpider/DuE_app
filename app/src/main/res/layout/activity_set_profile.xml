@@ -48,6 +48,7 @@
         android:ems="15"
         android:hint="@string/instaacc"
         android:includeFontPadding="false"
+        android:inputType="textEmailAddress"
         android:paddingLeft="6dp"
         android:paddingTop="3dp"
         android:paddingRight="6dp"
@@ -82,6 +83,7 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextNumber" />-->
+
     <Spinner
         android:id="@+id/spinner_interestedinn"
         android:layout_width="360dp"

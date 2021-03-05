@@ -49,6 +49,8 @@
     <string name="environment">Environment</string>
     <string name="spirituality">Spirituality</string>
     <string name="photography">Photography</string>
+    <string name="choose_from_your_gallery">Choose from your Gallery</string>
+    <string name="that_s_how_your_profile_will_appear_to_other_due_users">That\'s how your profile will appear to other Due users</string>
 
     <string-array name="genders_array">
         <item>Male</item>

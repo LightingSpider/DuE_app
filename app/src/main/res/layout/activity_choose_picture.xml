@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/purple_200"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    tools:context=".ChoosePicture">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/cracpicture"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#AC84D9"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:title="Select a Profile Picture"
+        app:titleTextColor="#FFFFFF" />
+
+    <ImageView
+        android:id="@+id/imagevieww"
+        android:scaleType="centerCrop"
+        android:src="@drawable/ic_choosepicture"
+        android:layout_width="220dp"
+        android:layout_height="220dp"
+        android:layout_marginTop="100dp"
+        android:contentDescription="@string/todo" />
+
+    <Button
+        android:id="@+id/btn_next"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="100dp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp"
+        android:background="@drawable/btnround"
+        android:text="@string/next"
+        android:textColor="#120031"
+        android:textSize="17sp"
+        android:textStyle="bold"
+        app:backgroundTint="#A9A5FF" />
+
+    <Button
+        android:id="@+id/btn_choosepicture"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp"
+        android:background="@drawable/btnround"
+        android:text="@string/choose_from_your_gallery"
+        android:textColor="#120031"
+        android:textSize="17sp"
+        android:textStyle="bold"
+        app:backgroundTint="#A9A5FF" />
+
+</LinearLayout>

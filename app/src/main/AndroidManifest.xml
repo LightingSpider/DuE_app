@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.due">
 
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher_mylogo"
@@ -9,7 +11,9 @@
         android:roundIcon="@mipmap/ic_launcher_mylogo_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.DuE">
-        <activity android:name=".ChooseInterests"></activity>
+        <activity android:name=".AccountReady"></activity>
+        <activity android:name=".ChoosePicture" />
+        <activity android:name=".ChooseInterests" />
         <activity android:name=".HomePage" />
         <activity android:name=".ChatRoom" />
         <activity android:name=".SetProfile" />
