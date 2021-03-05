@@ -18,6 +18,12 @@ class ChoosePicture : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_choose_picture)
 
+        val button2 = findViewById<Button>(R.id.btn_next)
+        button2.setOnClickListener {
+            val intent2 = Intent(this,AccountReady::class.java)
+            startActivity(intent2)
+        }
+
         val button1 = findViewById<Button>(R.id.btn_choosepicture)
         button1.setOnClickListener {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
