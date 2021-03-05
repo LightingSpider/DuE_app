@@ -62,9 +62,9 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/autoCompleteTextView2" />
+        app:layout_constraintTop_toBottomOf="@+id/spinner_interestedinn" />
 
-    <TextView
+    <!--<TextView
         android:id="@+id/autoCompleteTextView2"
         android:layout_width="360dp"
         android:layout_height="36dp"
@@ -77,6 +77,30 @@
         android:paddingBottom="3dp"
         android:text="@string/interestedin"
         android:textColor="#B7FFFFFF"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextNumber" />-->
+    <Spinner
+        android:id="@+id/spinner_interestedinn"
+        android:layout_width="360dp"
+        android:layout_height="36dp"
+        android:layout_marginTop="32dp"
+        android:animateLayoutChanges="true"
+        android:background="#25A9A5FF"
+        android:completionHint="@string/interestedin"
+        android:drawablePadding="8dp"
+        android:dropDownSelector="@color/pink"
+        android:foregroundTint="#AB6CBB"
+        android:paddingLeft="6dp"
+        android:paddingTop="3dp"
+        android:paddingRight="6dp"
+        android:paddingBottom="3dp"
+        android:popupBackground="@color/pink"
+        android:popupElevation="20dp"
+        android:text="@string/interestedin"
+        android:textColor="#AB6CBB"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"

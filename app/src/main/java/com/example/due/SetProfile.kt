@@ -44,5 +44,26 @@ class SetProfile : AppCompatActivity() {
             }
 
         }
+
+        val inter = arrayOf("Interested in*","Men", "Women", "Both")
+        val arrayAdapter2 = ArrayAdapter(this, R.layout.textspinner, inter)
+        val spg2 = findViewById<Spinner>(R.id.spinner_interestedinn)
+        spg2.adapter = arrayAdapter2
+        spg2.onItemSelectedListener = object :
+                AdapterView.OnItemSelectedListener {
+            override fun onItemSelected(
+                    parent: AdapterView<*>?,
+                    view: View?,
+                    position: Int,
+                    id: Long
+            ) {
+                //To change body of created
+            }
+
+            override fun onNothingSelected(parent: AdapterView<*>?) {
+                //To change body of created
+            }
+
+        }
     }
 }
