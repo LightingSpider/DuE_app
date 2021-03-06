@@ -16,7 +16,7 @@ class LoadingLocactionSplashScreen : AppCompatActivity() {
         setContentView(R.layout.activity_loading_locaction_splash_screen)
 
         Handler().postDelayed({
-            startActivity(Intent (this, HomePage::class.java))
+            startActivity(Intent (this, HomePageNew::class.java))
             finish()
         }, SPLASH_TIME)
 

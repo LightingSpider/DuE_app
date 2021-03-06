@@ -40,7 +40,7 @@ class AskPermissionLoco : AppCompatActivity() {
             // create dialog box
             val alert = dialogBuilder.create()
             // set title for alert dialog box
-            alert.setTitle("AlertDialogExample")
+            //alert.setTitle("AlertDialogExample")
             // show alert dialog
             alert.show()
         }

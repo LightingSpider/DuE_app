@@ -4,9 +4,10 @@
     <color name="purple_500">#A9A5FF</color>
     <color name="purple_700">#120031</color>
     <color name="pink">#E29B3B7B</color>
+    <color name="light_deep_purple">#A39176B7</color>
     <color name="teal_200">#120031</color>
     <color name="teal_700">#120031</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="fadded_white">#81FFFFFF</color>
+    <color name="faded_white">#81FFFFFF</color>
 </resources>
