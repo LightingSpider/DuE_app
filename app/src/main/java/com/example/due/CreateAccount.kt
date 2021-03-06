@@ -17,5 +17,17 @@ class CreateAccount : AppCompatActivity() {
             val intent1 = Intent(this,SetProfile::class.java)
             startActivity(intent1)
         }
+
+        val button2 = findViewById<Button>(R.id.btnfb)
+        button2.setOnClickListener {
+            val intent2 = Intent(this,FacebookSignUp::class.java)
+            startActivity(intent2)
+        }
+
+        val button3 = findViewById<Button>(R.id.btngoogle)
+        button3.setOnClickListener {
+            val intent3 = Intent(this,GoogleSignUp::class.java)
+            startActivity(intent3)
+        }
     }
 }

@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#120031"
+    tools:context=".Messages">
+
+    <ImageView
+        android:id="@+id/imageView2d"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:background="@drawable/borderfortopnavbtn"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/duemylogo1" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout2d"
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        android:orientation="horizontal"
+        android:background="@drawable/borderfortopnavbtn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <Button
+            android:id="@+id/location_buttond"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:backgroundTint="#120031"
+            android:drawableStart="@drawable/ic_outline_location_on_24"
+            android:paddingStart="44dp"
+            tools:ignore="RtlSymmetry" />
+
+        <Button
+            android:id="@+id/messages_buttond"
+            android:layout_width="110dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/btnround"
+            android:backgroundTint="#5C9176B7"
+            android:drawableStart="@drawable/ic_baseline_chat_bubble_outline_24"
+            android:paddingStart="47dp"
+            tools:ignore="RtlSymmetry" />
+
+        <Button
+            android:id="@+id/profile_buttond"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:backgroundTint="#120031"
+            android:drawableStart="@drawable/ic_outline_account_circle_24"
+            android:paddingStart="44dp"
+            tools:ignore="RtlSymmetry" />
+    </LinearLayout>
+
+    <View
+        android:id="@+id/viewchat1"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:background="@drawable/borderfortopnavbtn"
+        android:foregroundTint="#19B7767B"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textView20" />
+
+    <View
+        android:id="@+id/viewchat2"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:background="@drawable/borderfortopnavbtn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/viewchat1" />
+
+    <View
+        android:id="@+id/viewchat3"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:background="@drawable/borderfortopnavbtn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/viewchat2" />
+    <TextView
+        android:id="@+id/textView20"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="Matches"
+        android:textSize="26sp"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/linearLayout2d"/>
+
+    <ImageView
+        android:id="@+id/imageView7"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginStart="20dp"
+        app:layout_constraintBottom_toBottomOf="@+id/viewchat1"
+        app:layout_constraintStart_toStartOf="@+id/viewchat1"
+        app:layout_constraintTop_toTopOf="@+id/viewchat1"
+        app:srcCompat="@drawable/girlchat2" />
+    <ImageView
+        android:id="@+id/imageView8"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginStart="20dp"
+        app:layout_constraintBottom_toBottomOf="@+id/viewchat2"
+        app:layout_constraintStart_toStartOf="@+id/viewchat2"
+        app:layout_constraintTop_toTopOf="@+id/viewchat2"
+        app:srcCompat="@drawable/girlchat3" />
+    <ImageView
+        android:id="@+id/imageView9"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginStart="20dp"
+        app:layout_constraintBottom_toBottomOf="@+id/viewchat3"
+        app:layout_constraintStart_toStartOf="@+id/viewchat3"
+        app:layout_constraintTop_toTopOf="@+id/viewchat3"
+        app:srcCompat="@drawable/girlchat1" />
+
+    <TextView
+        android:id="@+id/name1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Maria"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="6dp"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/imageView7"
+        app:layout_constraintTop_toTopOf="@+id/viewchat1" />
+
+    <TextView
+        android:id="@+id/place1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:text="Akanthus"
+        android:textColor="@color/white"
+        android:textSize="11sp"
+        android:textStyle="italic"
+        app:layout_constraintStart_toEndOf="@+id/imageView7"
+        app:layout_constraintTop_toBottomOf="@+id/name1" />
+
+    <TextView
+        android:id="@+id/message1"
+        android:layout_width="230dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        android:text="Maria wants to buy you a drink! Have fun ;)"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/imageView7"
+        app:layout_constraintTop_toBottomOf="@+id/place1" />
+
+    <TextView
+        android:id="@+id/name2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Irene"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="6dp"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        android:textStyle="normal"
+        app:layout_constraintStart_toEndOf="@+id/imageView8"
+        app:layout_constraintTop_toTopOf="@+id/viewchat2" />
+
+    <TextView
+        android:id="@+id/place2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:text="Bronco"
+        android:textColor="#E6FFFFFF"
+        android:textSize="11sp"
+        android:textStyle="italic"
+        app:layout_constraintStart_toEndOf="@+id/imageView8"
+        app:layout_constraintTop_toBottomOf="@+id/name2" />
+
+    <TextView
+        android:id="@+id/message2"
+        android:layout_width="230dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="14dp"
+        android:text="@string/cc"
+        android:textColor="#CDFFFFFF"
+        android:textSize="16sp"
+        android:textStyle="normal"
+        app:layout_constraintStart_toEndOf="@+id/imageView8"
+        app:layout_constraintTop_toBottomOf="@+id/place2" />
+
+    <TextView
+        android:id="@+id/name3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Christina"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="6dp"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        android:textStyle="normal"
+        app:layout_constraintStart_toEndOf="@+id/imageView9"
+        app:layout_constraintTop_toTopOf="@+id/viewchat3" />
+
+    <TextView
+        android:id="@+id/place3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:text="Studio 24"
+        android:textColor="#E6FFFFFF"
+        android:textSize="11sp"
+        android:textStyle="italic"
+        app:layout_constraintStart_toEndOf="@+id/imageView9"
+        app:layout_constraintTop_toBottomOf="@+id/name3" />
+
+    <TextView
+        android:id="@+id/message3"
+        android:layout_width="230dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="14dp"
+        android:text="Maybe next time.. :)"
+        android:textColor="#CDFFFFFF"
+        android:textSize="16sp"
+        android:textStyle="normal"
+        app:layout_constraintStart_toEndOf="@+id/imageView9"
+        app:layout_constraintTop_toBottomOf="@+id/place3" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

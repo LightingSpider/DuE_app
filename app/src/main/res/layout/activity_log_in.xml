@@ -8,7 +8,7 @@
     tools:context=".LogIn">
 
     <Button
-        android:id="@+id/button_second3"
+        android:id="@+id/btnlogingoogle"
         android:layout_width="360dp"
         android:layout_height="50dp"
         android:layout_marginTop="32dp"
@@ -22,10 +22,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button_second2" />
+        app:layout_constraintTop_toBottomOf="@+id/btnloginfb" />
 
     <Button
-        android:id="@+id/button_second2"
+        android:id="@+id/btnloginfb"
         android:layout_width="360dp"
         android:layout_height="50dp"
         android:layout_marginTop="56dp"
@@ -65,18 +65,9 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/editTextTextEmailAddress" />
 
-    <TextView
-        android:id="@+id/textview_second"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toTopOf="@id/button_second"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        />
 
     <Button
-        android:id="@+id/button_second"
+        android:id="@+id/btnnlog"
         android:layout_width="360dp"
         android:layout_height="50dp"
         android:layout_marginTop="44dp"
@@ -125,7 +116,7 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/button_second" />
+        app:layout_constraintTop_toBottomOf="@id/btnnlog" />
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
