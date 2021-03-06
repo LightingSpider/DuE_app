@@ -22,8 +22,6 @@ import java.io.File
 
 class HomePageNew : AppCompatActivity() {
 
-    private val mStorageRef: StorageReference? = null
-
     @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
         window.setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN)
@@ -38,16 +36,15 @@ class HomePageNew : AppCompatActivity() {
             .get()
             .addOnSuccessListener { result ->
 
-                val users = ArrayList<UserInfo>()
+                val userAgeTextView: TextView = findViewById(R.id.user_age_textview)
 
                 // Get all nearby users
+                val users = ArrayList<UserInfo>()
                 for (document in result) {
                     Log.d("test_users", "${document.id} => ${document.data}")
                     val userInfo = document.toObject(UserInfo::class.java) ?: UserInfo()
                     users.add(userInfo)
                 }
-
-                val userAgeTextView: TextView = findViewById(R.id.user_age_textview)
 
                 // Display the first user
                 userAgeTextView.text = "${users[0].username}, ${users[0].age}"
@@ -106,29 +103,86 @@ class HomePageNew : AppCompatActivity() {
                     }
                 }
 
+                // Dislike button pressed
+                val dislikeButton: Button = findViewById(R.id.dislike_button)
+                dislikeButton.setOnClickListener {
+
+                    // Display users
+                    if(users.size > 1) {
+                        val userRange = 1 until users.size
+                        val userIndex = userRange.random()
+                        Log.d("index", userIndex.toString())
+                        userAgeTextView.text = "${users[userIndex].username}, ${users[userIndex].age}"
+
+
+                        // Download user photo
+                        val riversRef: StorageReference = storageRef.child("${users[userIndex].username}.jpg")
+                        val localFile = File.createTempFile("images", "jpg")
+                        riversRef.getFile(localFile)
+                                .addOnSuccessListener(OnSuccessListener<FileDownloadTask.TaskSnapshot?> {
+                                    Log.d("photo", "success")
+
+                                    // Display user image
+                                    val userImage: ImageView = findViewById<View>(R.id.user_image) as ImageView
+                                    val myBitmap = BitmapFactory.decodeFile(localFile.absolutePath)
+                                    userImage.setImageBitmap(myBitmap)
+
+                                    Log.d("photo", "display")
+
+                                }).addOnFailureListener(OnFailureListener {
+                                    Log.d("photo", "fail")
+                                })
+
+
+                        users.removeAt(userIndex)
+                    }
+                    else{
+                        userAgeTextView.text = "den exei alla mounakia bro"
+                    }
+                }
+
+                // Drink button pressed
+                val drinkButton: Button = findViewById(R.id.drink_button)
+                drinkButton.setOnClickListener {
+
+                    // Display users
+                    if(users.size > 1) {
+                        val userRange = 1 until users.size
+                        val userIndex = userRange.random()
+                        Log.d("index", userIndex.toString())
+                        userAgeTextView.text = "${users[userIndex].username}, ${users[userIndex].age}"
+
+
+                        // Download user photo
+                        val riversRef: StorageReference = storageRef.child("${users[userIndex].username}.jpg")
+                        val localFile = File.createTempFile("images", "jpg")
+                        riversRef.getFile(localFile)
+                                .addOnSuccessListener(OnSuccessListener<FileDownloadTask.TaskSnapshot?> {
+                                    Log.d("photo", "success")
+
+                                    // Display user image
+                                    val userImage: ImageView = findViewById<View>(R.id.user_image) as ImageView
+                                    val myBitmap = BitmapFactory.decodeFile(localFile.absolutePath)
+                                    userImage.setImageBitmap(myBitmap)
+
+                                    Log.d("photo", "display")
+
+                                }).addOnFailureListener(OnFailureListener {
+                                    Log.d("photo", "fail")
+                                })
+
+
+                        users.removeAt(userIndex)
+                    }
+                    else{
+                        userAgeTextView.text = "den exei alla mounakia bro"
+                    }
+                }
+
             }
             .addOnFailureListener { exception ->
                 Log.d("test_users", "Error getting documents: ", exception)
             }
-
-
-
-        /*
-        val rollButton: Button = findViewById(R.id.like_button)
-        rollButton.setOnClickListener {
-
-            db.collection("test_users").document("4EkcTGIqP5WYIJvmwXIz")
-                    .get()
-                    .addOnSuccessListener { document ->
-                        val userInfo = document.toObject(UserInfo::class.java) ?: UserInfo()
-                        user_age.text = "${userInfo.username}, ${userInfo.age}"
-                    }
-                    .addOnFailureListener { exception ->
-                        Log.w("test_users", "Error getting documents.", exception)
-                    }
-
-        }
-        */
     }
 }
 
