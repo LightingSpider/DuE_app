@@ -11,7 +11,8 @@
         android:roundIcon="@mipmap/ic_launcher_mylogo_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.DuE">
-        <activity android:name=".MyProfile"></activity>
+        <activity android:name=".EditProfile"></activity>
+        <activity android:name=".MyProfile" />
         <activity android:name=".Messages" />
         <activity android:name=".NoMoreSuggestions" />
         <activity android:name=".HomePageNew" />

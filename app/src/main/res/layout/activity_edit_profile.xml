@@ -7,27 +7,13 @@
     android:background="#120031"
     tools:context=".SetProfile">
 
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="#9B3B7B"
-        android:minHeight="?attr/actionBarSize"
-        android:theme="?attr/actionBarTheme"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:title="Create Account"
-        app:titleTextColor="#FFFFFF" />
-
     <Button
-        android:id="@+id/btnnext"
+        android:id="@+id/btnsave"
         android:layout_width="360dp"
         android:layout_height="50dp"
         android:layout_marginTop="50dp"
         android:background="@drawable/btnround"
-        android:text="@string/next"
+        android:text="DONE"
         android:textColor="#FFFFFF"
         android:textSize="17sp"
         android:textStyle="bold"
@@ -46,7 +32,7 @@
         android:background="#25A9A5FF"
         android:drawablePadding="8dp"
         android:ems="15"
-        android:hint="@string/instaacc"
+        android:hint="Instagram: m_jack"
         android:includeFontPadding="false"
         android:inputType="textEmailAddress"
         android:paddingLeft="6dp"
@@ -55,7 +41,7 @@
         android:paddingBottom="3dp"
         android:textColor="@color/white"
         android:textColorHighlight="#FFFFFF"
-        android:textColorHint="#B7FFFFFF"
+        android:textColorHint="#E6FFFFFF"
         android:textColorLink="#FFFFFF"
         android:textCursorDrawable="@drawable/ic_launcher_mylogo_background"
         android:textIsSelectable="false"
@@ -63,10 +49,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spinner_interestedinn" />
+        app:layout_constraintTop_toBottomOf="@+id/spinner_interestedinnn" />
 
     <Spinner
-        android:id="@+id/spinner_interestedinn"
+        android:id="@+id/spinner_interestedinnn"
         android:layout_width="360dp"
         android:layout_height="36dp"
         android:layout_marginTop="32dp"
@@ -99,7 +85,7 @@
         android:background="#25A9A5FF"
         android:drawablePadding="8dp"
         android:ems="15"
-        android:hint="@string/fbacc"
+        android:hint="Facebook: Jack Mil"
         android:includeFontPadding="false"
         android:inputType="textEmailAddress"
         android:paddingLeft="6dp"
@@ -108,7 +94,7 @@
         android:paddingBottom="3dp"
         android:textColor="@color/white"
         android:textColorHighlight="#FFFFFF"
-        android:textColorHint="#B7FFFFFF"
+        android:textColorHint="#E6FFFFFF"
         android:textColorLink="#FFFFFF"
         android:textCursorDrawable="@drawable/ic_launcher_mylogo_background"
         android:textIsSelectable="false"
@@ -127,7 +113,7 @@
         android:background="#25A9A5FF"
         android:drawablePadding="8dp"
         android:ems="15"
-        android:hint="@string/name"
+        android:hint="Jack"
         android:includeFontPadding="false"
         android:inputType="textEmailAddress"
         android:paddingLeft="6dp"
@@ -136,7 +122,7 @@
         android:paddingBottom="3dp"
         android:textColor="@color/white"
         android:textColorHighlight="#FFFFFF"
-        android:textColorHint="#B7FFFFFF"
+        android:textColorHint="#E6FFFFFF"
         android:textColorLink="#FFFFFF"
         android:textCursorDrawable="@drawable/ic_launcher_mylogo_background"
         android:textIsSelectable="false"
@@ -150,18 +136,18 @@
         android:id="@+id/textView5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
-        android:text="@string/setupyourprofile"
+        android:layout_marginTop="34dp"
+        android:text="Edit Your Profile"
         android:textColor="#FFFFFF"
         android:textSize="26sp"
         android:textStyle="normal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.143"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar2" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Spinner
-        android:id="@+id/spinner_gender"
+        android:id="@+id/spinner_genderr"
         android:layout_width="360dp"
         android:layout_height="36dp"
         android:layout_marginTop="32dp"
@@ -193,7 +179,7 @@
         android:autofillHints=""
         android:background="#25A9A5FF"
         android:ems="10"
-        android:hint="@string/age"
+        android:hint="36"
         android:inputType="number"
         android:paddingStart="6dp"
         android:paddingLeft="6dp"
@@ -202,11 +188,23 @@
         android:paddingRight="6dp"
         android:paddingBottom="3dp"
         android:textColor="@color/white"
-        android:textColorHint="#B7FFFFFF"
+        android:textColorHint="#E6FFFFFF"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.08"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spinner_gender" />
+        app:layout_constraintTop_toBottomOf="@+id/spinner_genderr" />
+
+    <ImageView
+        android:id="@+id/imageView2dd"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:background="@drawable/borderfortopnavbtn"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/duemylogo1" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
