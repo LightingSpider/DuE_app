@@ -3,22 +3,19 @@ package com.example.due
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.os.Handler
 import android.view.WindowManager
+import android.widget.Button
 
-class LoadingLocactionSplashScreen : AppCompatActivity() {
-
-    private val SPLASH_TIME: Long = 3500
-
+class FacebookSignUp : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         window.setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN)
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_loading_locaction_splash_screen)
+        setContentView(R.layout.activity_facebook_sign_up)
 
-        Handler().postDelayed({
-            startActivity(Intent (this, HomePage::class.java))
-            finish()
-        }, SPLASH_TIME)
-
+        val button1 = findViewById<Button>(R.id.buttonn1)
+        button1.setOnClickListener {
+            val intent1 = Intent(this,SetProfile::class.java)
+            startActivity(intent1)
+        }
     }
 }

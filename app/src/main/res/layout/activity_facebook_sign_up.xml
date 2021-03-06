@@ -8,7 +8,7 @@
     tools:context=".FacebookLogIn">
 
     <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbarfb"
+        android:id="@+id/toolbarfb1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="#3B5998"
@@ -18,7 +18,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:title="Login with Facebook"
+        app:title="Continue with Facebook"
         app:titleTextColor="#FFFFFF" />
 
     <ImageView
@@ -28,7 +28,7 @@
         android:layout_marginTop="80dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbarfb"
+        app:layout_constraintTop_toBottomOf="@+id/toolbarfb1"
         app:srcCompat="@drawable/ic_sharp_facebook_24" />
 
     <TextView
@@ -74,7 +74,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView12" />
 
     <Button
-        android:id="@+id/buttonn"
+        android:id="@+id/buttonn1"
         android:layout_width="220dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="100dp"
@@ -101,7 +101,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buttonn" />
+        app:layout_constraintTop_toBottomOf="@+id/buttonn1" />
 
     <ImageView
         android:id="@+id/imageView6"
@@ -122,7 +122,7 @@
         app:layout_constraintHorizontal_bias="1"
         app:layout_constraintEnd_toStartOf="@+id/textView14"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buttonn"
+        app:layout_constraintTop_toBottomOf="@+id/buttonn1"
         app:srcCompat="@drawable/ic_baseline_lock_24" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

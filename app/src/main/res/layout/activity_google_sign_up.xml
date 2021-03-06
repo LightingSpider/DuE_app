@@ -8,7 +8,7 @@
     tools:context=".GoogleLogIn">
 
     <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbargoogle"
+        android:id="@+id/toolbargoogle1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="#D591225C"
@@ -18,7 +18,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:title="Login with Google"
+        app:title="Continue with Google"
         app:titleTextColor="#FFFFFF" />
 
     <TextView
@@ -32,7 +32,7 @@
         android:layout_marginTop="100dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbargoogle" />
+        app:layout_constraintTop_toBottomOf="@+id/toolbargoogle1" />
 
     <TextView
         android:id="@+id/textView16"
@@ -94,7 +94,7 @@
         app:layout_constraintTop_toBottomOf="@+id/editTextTextEmailAddress8" />
 
     <Button
-        android:id="@+id/buttongoogle"
+        android:id="@+id/buttongoogle1"
         android:layout_width="260dp"
         android:layout_height="34dp"
         android:layout_marginTop="16dp"
@@ -113,10 +113,10 @@
         android:layout_marginTop="10dp"
         android:text="Need help?"
         android:textColor="#A9FFFFFF"
-        app:layout_constraintEnd_toEndOf="@+id/buttongoogle"
+        app:layout_constraintEnd_toEndOf="@+id/buttongoogle1"
         app:layout_constraintHorizontal_bias="0"
-        app:layout_constraintStart_toStartOf="@+id/buttongoogle"
-        app:layout_constraintTop_toBottomOf="@+id/buttongoogle" />
+        app:layout_constraintStart_toStartOf="@+id/buttongoogle1"
+        app:layout_constraintTop_toBottomOf="@+id/buttongoogle1" />
 
     <TextView
         android:id="@+id/textView18"
