@@ -275,14 +275,12 @@ class HomePageNew : AppCompatActivity() {
         }
     }
 
-
     private fun sendNotification(message: String){
 
-        val intent = Intent(this, ChatRoom::class.java).apply {
+        val intent = Intent(this, Messages::class.java).apply {
             flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
         }
 
-        val contentView = RemoteViews(packageName, R.layout.activity_chat_room)
         val pendingIntent: PendingIntent = PendingIntent.getActivity(this, 0, intent, 0)
         val bitmap = BitmapFactory.decodeResource(applicationContext.resources, R.drawable.duemylogo1)
         val bitmapLargeIcon = BitmapFactory.decodeResource(applicationContext.resources, R.drawable.duemylogo1)
