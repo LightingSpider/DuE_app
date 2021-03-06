@@ -1,16 +1,24 @@
 package com.example.due
 
 import android.annotation.SuppressLint
+import android.app.NotificationChannel
+import android.app.NotificationManager
+import android.app.PendingIntent
+import android.content.Context
+import android.content.Intent
+import android.graphics.Bitmap
 import android.graphics.BitmapFactory
+import android.graphics.Color
+import android.graphics.drawable.BitmapDrawable
+import android.os.Build
 import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.view.WindowManager
-import android.widget.Button
-import android.widget.ImageView
-import android.widget.TextView
-import android.widget.Toast
+import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.app.NotificationCompat
+import androidx.core.app.NotificationManagerCompat
 import com.google.android.gms.tasks.OnFailureListener
 import com.google.android.gms.tasks.OnSuccessListener
 import com.google.firebase.firestore.SetOptions
@@ -24,11 +32,16 @@ import java.io.File
 
 class HomePageNew : AppCompatActivity() {
 
+    private val CHANNEL_ID = "channel_id_exmample_01"
+    private val notificationId = 101
+
     @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
         window.setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN)
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home_page_new)
+
+        createNotificationChannel()
 
         val db = Firebase.firestore
         val storageRef = FirebaseStorage.getInstance().reference;
@@ -84,7 +97,7 @@ class HomePageNew : AppCompatActivity() {
 
                     // Check if it's a match
                     if(currentUsername in displayedUser.my_likes) {
-                        Toast.makeText(applicationContext, "IT'S A MATCH!!!", Toast.LENGTH_SHORT).show()
+                        sendNotification("${displayedUser.username} also likes you")
                     }
 
                     // Update the database about the like reaction
@@ -94,15 +107,13 @@ class HomePageNew : AppCompatActivity() {
                             .set(data, SetOptions.merge())
                             .addOnSuccessListener {}
                             .addOnFailureListener {
-                                Toast.makeText(applicationContext,"egine malakia" ,Toast.LENGTH_SHORT).show()
+                                Toast.makeText(applicationContext, "egine malakia", Toast.LENGTH_SHORT).show()
                             }
 
                     val notSeenUsers = users.filter { s -> s !in seenUsers }
 
                     // Display next user
                     if(notSeenUsers.isNotEmpty()) {
-
-
 
                         // Get the new one
                         displayedUser = notSeenUsers.shuffled().take(1)[0]
@@ -145,7 +156,7 @@ class HomePageNew : AppCompatActivity() {
                             .set(data, SetOptions.merge())
                             .addOnSuccessListener {}
                             .addOnFailureListener {
-                                Toast.makeText(applicationContext,"egine malakia" ,Toast.LENGTH_SHORT).show()
+                                Toast.makeText(applicationContext, "egine malakia", Toast.LENGTH_SHORT).show()
                             }
 
                     val notSeenUsers = users.filter { s -> s !in seenUsers }
@@ -190,7 +201,7 @@ class HomePageNew : AppCompatActivity() {
 
                     // Check if it's a match
                     if(currentUsername in displayedUser.my_likes) {
-                        Toast.makeText(applicationContext, "IT'S A MATCH!!!", Toast.LENGTH_SHORT).show()
+                        sendNotification("Buy ${displayedUser.username} a drink")
                     }
 
                     // Update the database about the like reaction
@@ -200,7 +211,7 @@ class HomePageNew : AppCompatActivity() {
                             .set(data, SetOptions.merge())
                             .addOnSuccessListener {}
                             .addOnFailureListener {
-                                Toast.makeText(applicationContext,"egine malakia" ,Toast.LENGTH_SHORT).show()
+                                Toast.makeText(applicationContext, "egine malakia", Toast.LENGTH_SHORT).show()
                             }
 
                     val notSeenUsers = users.filter { s -> s !in seenUsers }
@@ -242,6 +253,56 @@ class HomePageNew : AppCompatActivity() {
             .addOnFailureListener { exception ->
                 Log.d("test_users", "Error getting documents: ", exception)
             }
+
+
+    }
+
+    private fun createNotificationChannel(){
+
+        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.O){
+            val name = "Notification Title"
+            val descriptionText = "Notification Description"
+            val importance = NotificationManager.IMPORTANCE_DEFAULT
+            val channel = NotificationChannel(CHANNEL_ID, name, importance).apply {
+                description = descriptionText
+                enableVibration(true)
+                enableLights(true)
+                lightColor = Color.MAGENTA
+            }
+
+            val notificationManager: NotificationManager = getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
+            notificationManager.createNotificationChannel(channel)
+        }
+    }
+
+
+    private fun sendNotification(message: String){
+
+        val intent = Intent(this, ChatRoom::class.java).apply {
+            flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+        }
+
+        val contentView = RemoteViews(packageName, R.layout.activity_chat_room)
+        val pendingIntent: PendingIntent = PendingIntent.getActivity(this, 0, intent, 0)
+        val bitmap = BitmapFactory.decodeResource(applicationContext.resources, R.drawable.duemylogo1)
+        val bitmapLargeIcon = BitmapFactory.decodeResource(applicationContext.resources, R.drawable.duemylogo1)
+
+        val unicode = 0x1F60A
+        val emoji = String(Character.toChars(unicode));
+
+        val builder = NotificationCompat.Builder(this, CHANNEL_ID)
+                .setContentTitle("You have a match!")
+                .setContentText("$message and ... $emoji")
+                .setSmallIcon(R.drawable.ic_launcher_mylogo_foreground)
+                //.setLargeIcon(bitmapLargeIcon)
+                //.setStyle(NotificationCompat.BigPictureStyle().bigPicture(userBitmap))
+                .setContentIntent(pendingIntent)
+                .setPriority(NotificationCompat.PRIORITY_DEFAULT)
+
+        with(NotificationManagerCompat.from(this)){
+            notify(notificationId, builder.build())
+        }
+
     }
 }
 
