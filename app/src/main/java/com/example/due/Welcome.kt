@@ -5,17 +5,18 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.WindowManager
 import android.widget.ImageView
+import android.widget.TextView
 
-class SplashScreen : AppCompatActivity() {
+class Welcome : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         window.setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN)
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_splash_screen)
+        setContentView(R.layout.activity_welcome)
 
-        val logodue1 = findViewById<ImageView>(R.id.logodue)
-        logodue1.alpha = 0f
-        logodue1.animate().setDuration(2000).alpha(2f).withEndAction {
-            val i = Intent(this,MainActivity::class.java)
+        val wel = findViewById<TextView>(R.id.welcome)
+        wel.alpha = 0f
+        wel.animate().setDuration(2000).alpha(2f).withEndAction {
+            val i = Intent(this,AskPermissionLoco::class.java)
             startActivity(i)
             overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out)
             finish()

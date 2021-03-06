@@ -3,7 +3,6 @@
     package="com.example.due">
 
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
 
     <application
         android:allowBackup="true"
@@ -12,6 +11,11 @@
         android:roundIcon="@mipmap/ic_launcher_mylogo_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.DuE">
+        <activity android:name=".GoogleLogIn"/>
+        <activity android:name=".FacebookLogIn" />
+        <activity android:name=".Welcome" />
+        <activity android:name=".SplashScreenAccountReady" />
+        <activity android:name=".LoadingLocactionSplashScreen" />
         <activity android:name=".AskPermissionLoco" />
         <activity android:name=".SplashScreen">
             <intent-filter>
