@@ -52,8 +52,6 @@ class HomePageNew : AppCompatActivity() {
 
         createNotificationChannel()
 
-        // val seenUsers = intent.getParcelableArrayListExtra<UserInfo>("seenUsers") as ArrayList<UserInfo>
-
         Log.d("seenUsers", seenUsers.size.toString())
 
         db.collection("users").whereNotEqualTo("username", currentUsername)
@@ -264,14 +262,12 @@ class HomePageNew : AppCompatActivity() {
         val messageBtn = findViewById<Button>(R.id.messages_button)
         messageBtn.setOnClickListener {
             val intent = Intent(this, Messages::class.java)
-            intent.putExtra("seenUsers", seenUsers)
             startActivity(intent)
         }
 
         val profileBtn = findViewById<Button>(R.id.profile_button)
         profileBtn.setOnClickListener {
             val intent = Intent(this, MyProfile::class.java)
-            intent.putExtra("seenUsers", seenUsers)
             startActivity(intent)
         }
 
