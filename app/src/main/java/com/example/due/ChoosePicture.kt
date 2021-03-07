@@ -53,7 +53,7 @@ class ChoosePicture : AppCompatActivity() {
     }
 
     companion object {
-        private const val IMAGE_PICK_CODE = 1000;
+        const val IMAGE_PICK_CODE = 1000;
         private const val PERMISSION_CODE = 1001;
 
     }

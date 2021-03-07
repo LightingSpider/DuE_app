@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.due">
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher_mylogo"
@@ -9,9 +11,12 @@
         android:roundIcon="@mipmap/ic_launcher_mylogo_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.DuE">
-        <activity android:name=".MyProfile"></activity>
+        <activity android:name=".EditInterests"></activity>
+        <activity android:name=".EditProfile" />
+        <activity android:name=".MyProfile" />
         <activity android:name=".Messages" />
         <activity android:name=".NoMoreSuggestions" />
+        <activity android:name=".HomePageNew" />
         <activity android:name=".GoogleSignUp" />
         <activity android:name=".FacebookSignUp" />
         <activity android:name=".GoogleLogIn" />
@@ -20,7 +25,7 @@
         <activity android:name=".SplashScreenAccountReady" />
         <activity android:name=".LoadingLocactionSplashScreen" />
         <activity android:name=".AskPermissionLoco" />
-        <activity android:name=".HomePageNew">
+        <activity android:name=".SplashScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
