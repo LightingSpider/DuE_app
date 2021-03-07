@@ -9,9 +9,11 @@
 
     <Button
         android:id="@+id/btngoogle"
-        android:layout_width="360dp"
+        android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:layout_marginTop="36dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="28dp"
+        android:layout_marginEnd="30dp"
         android:background="@drawable/btnround"
         android:text="@string/google"
         android:textColor="#FFFFFF"
@@ -19,15 +21,17 @@
         android:textStyle="bold"
         app:backgroundTint="#9191225C"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.509"
+        app:layout_constraintHorizontal_bias="0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/btnfb" />
 
     <Button
         android:id="@+id/btnfb"
-        android:layout_width="360dp"
+        android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:layout_marginTop="46dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="28dp"
+        android:layout_marginEnd="30dp"
         android:background="@drawable/btnround"
         android:text="@string/facebook"
         android:textColor="#FFFFFF"
@@ -35,29 +39,29 @@
         android:textStyle="bold"
         app:backgroundTint="#91225C"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/textView4"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintTop_toBottomOf="@id/textView4" />
 
     <TextView
         android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="46dp"
-        android:text="@string/orjoin2"
+        android:layout_marginTop="28dp"
+        android:text="--------  Or join with  --------"
         android:textColor="#83FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/btn_Register"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toBottomOf="@id/btn_Register" />
 
     <Button
         android:id="@+id/btn_Register"
-        android:layout_width="360dp"
+        android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:layout_marginTop="36dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="30dp"
         android:background="@drawable/btnround"
         android:text="@string/register"
         android:textColor="#FFFFFF"
@@ -65,29 +69,32 @@
         android:textStyle="bold"
         app:backgroundTint="#9B3B7B"
         app:layout_constraintEnd_toEndOf="parent"
-
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/radioButton4" />
 
     <RadioButton
         android:id="@+id/radioButton4"
-        android:layout_width="360dp"
+        android:layout_width="match_parent"
         android:layout_height="40dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd ="30dp"
         android:layout_marginTop="2dp"
         android:buttonTint="#FFFFFF"
         android:text="@string/news"
         android:textColor="#A6FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/radioButton" />
 
     <EditText
         android:id="@+id/editTextTextEmailAddress4"
-        android:layout_width="360dp"
+        android:layout_width="match_parent"
         android:layout_height="36dp"
         android:layout_marginTop="20dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd ="30dp"
         android:autofillHints=""
         android:background="#25A9A5FF"
         android:drawableStart="@drawable/ic_lock"
@@ -103,15 +110,17 @@
         android:textIsSelectable="false"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextTextEmailAddress2" />
 
     <EditText
         android:id="@+id/editTextTextEmailAddress2"
-        android:layout_width="360dp"
+        android:layout_width="match_parent"
         android:layout_height="36dp"
-        android:layout_marginTop="52dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="30dp"
         android:autofillHints=""
         android:background="#25A9A5FF"
         android:drawableStart="@drawable/ic_email"
@@ -127,21 +136,23 @@
         android:textIsSelectable="false"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toolbar" />
 
     <RadioButton
         android:id="@+id/radioButton"
-        android:layout_width="360dp"
+        android:layout_width="match_parent"
         android:layout_height="40dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="22dp"
+        android:layout_marginEnd="30dp"
         android:backgroundTint="#FFFFFF"
         android:buttonTint="#FFFFFF"
         android:text="@string/policy"
         android:textColor="#A6FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextTextEmailAddress4" />
 

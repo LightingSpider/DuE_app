@@ -14,5 +14,5 @@
         android:text="Welcome"
         android:textColor="#CBC8FF"
         android:textStyle="bold"
-        android:textSize="36sp"/>
+        android:textSize="34sp"/>
 </RelativeLayout>
