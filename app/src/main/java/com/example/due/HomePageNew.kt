@@ -96,6 +96,15 @@ class HomePageNew : AppCompatActivity() {
                 val likeButton: Button = findViewById(R.id.like_button)
                 likeButton.setOnClickListener {
 
+                    // Animation for heart display after like button pressed
+                    val heart = findViewById<ImageView>(R.id.heartlove)
+                    heart.setVisibility(View.VISIBLE);
+                    heart.alpha = 0f
+                    heart.animate().setDuration(500).alpha(2f).withEndAction {
+                        overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out)
+                        heart.setVisibility(View.INVISIBLE);
+                    }
+
                     // Check if it's a match
                     if(currentUsername in displayedUser.my_likes) {
                         sendNotification("${displayedUser.username} also likes you")
@@ -127,6 +136,9 @@ class HomePageNew : AppCompatActivity() {
                                 .addOnSuccessListener(OnSuccessListener<FileDownloadTask.TaskSnapshot?> {
                                     Log.d("photo", "success")
 
+                                    // sleep for 1s in order to sync animation and new user's image
+                                    Thread.sleep(1000)
+
                                     // Display user image
                                     val userImage: ImageView = findViewById<View>(R.id.user_image) as ImageView
                                     val myBitmap = BitmapFactory.decodeFile(localFile.absolutePath)
@@ -152,7 +164,16 @@ class HomePageNew : AppCompatActivity() {
                 val dislikeButton: Button = findViewById(R.id.dislike_button)
                 dislikeButton.setOnClickListener {
 
-                    // Update the database about the like reaction
+                    // Animation for broken-heart display after dislike button pressed
+                    val hate = findViewById<ImageView>(R.id.brokenheart)
+                    hate.setVisibility(View.VISIBLE);
+                    hate.alpha = 0f
+                    hate.animate().setDuration(500).alpha(2f).withEndAction {
+                        overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out)
+                        hate.setVisibility(View.INVISIBLE);
+                    }
+
+                    // Update the database about the dislike reaction
                     displayedUser.got_dislikes.add(currentUsername)
                     val data = hashMapOf("got_dislikes" to displayedUser.got_dislikes)
                     db.collection("users").document(displayedUser.id)
@@ -179,6 +200,9 @@ class HomePageNew : AppCompatActivity() {
                                 .addOnSuccessListener(OnSuccessListener<FileDownloadTask.TaskSnapshot?> {
                                     Log.d("photo", "success")
 
+                                    // sleep for 1s in order to sync animation and new user's image
+                                    Thread.sleep(1000)
+
                                     // Display user image
                                     val userImage: ImageView = findViewById<View>(R.id.user_image) as ImageView
                                     val myBitmap = BitmapFactory.decodeFile(localFile.absolutePath)
@@ -203,12 +227,21 @@ class HomePageNew : AppCompatActivity() {
                 val drinkButton: Button = findViewById(R.id.drink_button)
                 drinkButton.setOnClickListener {
 
+                    // Animation for cocktail display after drink button pressed
+                    val cocktail_drink = findViewById<ImageView>(R.id.orangecocktail)
+                    cocktail_drink.setVisibility(View.VISIBLE);
+                    cocktail_drink.alpha = 0f
+                    cocktail_drink.animate().setDuration(500).alpha(2f).withEndAction {
+                        overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out)
+                        cocktail_drink.setVisibility(View.INVISIBLE);
+                    }
+
                     // Check if it's a match
                     if(currentUsername in displayedUser.my_likes) {
                         sendNotification("Buy ${displayedUser.username} a drink")
                     }
 
-                    // Update the database about the like reaction
+                    // Update the database about the drink reaction
                     displayedUser.got_drinks.add(currentUsername)
                     val data = hashMapOf("got_drinks" to displayedUser.got_drinks)
                     db.collection("users").document(displayedUser.id)
@@ -233,6 +266,9 @@ class HomePageNew : AppCompatActivity() {
                         userImagesRef.getFile(localFile)
                                 .addOnSuccessListener(OnSuccessListener<FileDownloadTask.TaskSnapshot?> {
                                     Log.d("photo", "success")
+
+                                    // sleep for 1s in order to sync animation and new user's image
+                                    Thread.sleep(1000)
 
                                     // Display user image
                                     val userImage: ImageView = findViewById<View>(R.id.user_image) as ImageView

@@ -41,7 +41,7 @@ class MyProfile : AppCompatActivity() {
 
         val edit = findViewById<Button>(R.id.buttonedit)
         edit.setOnClickListener {
-            val intent2 = Intent(this,EditProfile::class.java)
+            val intent2 = Intent(this, EditProfile::class.java)
             startActivity(intent2)
         }
 
