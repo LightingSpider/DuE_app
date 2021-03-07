@@ -11,16 +11,16 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_above="@+id/imagejack"
-        android:layout_marginBottom="80dp"
+        android:layout_marginBottom="70dp"
         android:layout_centerHorizontal="true"
         android:text="Your account is now ready!"
         android:textColor="#CBC8FF"
-        android:textSize="28sp"
+        android:textSize="24sp"
         android:textStyle="bold" />
     <ImageView
         android:id="@+id/imagejack"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
+        android:layout_width="130dp"
+        android:layout_height="130dp"
         android:layout_centerInParent="true"
         android:src="@drawable/f3659f4c25c38225b41b69e87c7b5f7a1"
         />

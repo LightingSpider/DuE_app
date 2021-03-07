@@ -9,10 +9,12 @@
 
     <Button
         android:id="@+id/btn_LogIn"
-        android:layout_width="250dp"
+        android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_marginTop="8dp"
         android:background="@drawable/btnround"
+        android:layout_marginStart="60dp"
+        android:layout_marginEnd ="60dp"
         android:text="@string/LogIn"
         android:textColor="#FFFFFF"
         android:textSize="17sp"
@@ -25,9 +27,11 @@
 
     <Button
         android:id="@+id/btn_CreateAccount"
-        android:layout_width="250dp"
+        android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_marginTop="8dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginEnd ="60dp"
         android:background="@drawable/btnround"
         android:text="@string/Create"
         android:textColor="#FFFFFF"
@@ -43,7 +47,7 @@
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="56dp"
         android:text="@string/Already"
         android:textColor="#A9A5FF"
         app:layout_constraintEnd_toEndOf="parent"
@@ -67,11 +71,10 @@
         android:id="@+id/imageView3"
         android:layout_width="120dp"
         android:layout_height="66dp"
-        android:layout_marginTop="220dp"
+        android:layout_marginTop="140dp"
         android:contentDescription="@string/todo"
         android:src="@drawable/duemylogo1"
         app:layout_constraintEnd_toEndOf="parent"
-
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

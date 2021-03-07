@@ -9,9 +9,11 @@
 
     <Button
         android:id="@+id/btnlogingoogle"
-        android:layout_width="360dp"
+        android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="28dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd ="30dp"
         android:layout_marginBottom="112dp"
         android:background="@drawable/btnround"
         android:text="@string/logingoogle"
@@ -26,9 +28,11 @@
 
     <Button
         android:id="@+id/btnloginfb"
-        android:layout_width="360dp"
+        android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:layout_marginTop="56dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd ="30dp"
+        android:layout_marginTop="40dp"
         android:background="@drawable/btnround"
         android:text="@string/loginfb"
         android:textColor="#FFFFFF"
@@ -43,9 +47,11 @@
 
     <EditText
         android:id="@+id/editTextTextEmailAddress3"
-        android:layout_width="360dp"
+        android:layout_width="match_parent"
         android:layout_height="36dp"
-        android:layout_marginTop="36dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd ="30dp"
         android:autofillHints=""
         android:background="#25A9A5FF"
         android:drawableStart="@drawable/ic_lock"
@@ -68,9 +74,11 @@
 
     <Button
         android:id="@+id/btnnlog"
-        android:layout_width="360dp"
+        android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:layout_marginTop="44dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd ="30dp"
         android:background="@drawable/btnround"
         android:text="@string/LogIn"
         android:textColor="#FFFFFF"
@@ -84,9 +92,11 @@
 
     <EditText
         android:id="@+id/editTextTextEmailAddress"
-        android:layout_width="360dp"
+        android:layout_width="match_parent"
         android:layout_height="36dp"
-        android:layout_marginTop="76dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd ="30dp"
+        android:layout_marginTop="40dp"
         android:autofillHints=""
         android:background="#25A9A5FF"
         android:drawableStart="@drawable/ic_email"
@@ -110,8 +120,8 @@
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="56dp"
-        android:text="@string/or2"
+        android:layout_marginTop="40dp"
+        android:text="----------  OR  ----------"
         android:textColor="#83FFFFFF"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintEnd_toEndOf="parent"
