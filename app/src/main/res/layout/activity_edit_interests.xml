@@ -7,22 +7,27 @@
     android:backgroundTint="#120031"
     android:orientation="vertical">
 
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/cracinterests"
-        android:layout_width="match_parent"
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="#AB6CBB"
-        android:minHeight="?attr/actionBarSize"
-        android:theme="?attr/actionBarTheme"
-        app:title="What excited you?"
-        app:titleTextColor="#FFFFFF" />
+        android:layout_marginTop="30dp"
+        android:layout_marginStart="25dp"
+        android:text="What excites you?"
+        android:textColor="#FFFFFF"
+        android:textSize="26sp"
+        android:textStyle="normal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.143"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <CheckBox
         android:id="@+id/checkbox_animals"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="25dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="25dp"
         android:buttonTint="#FFFFFF"
         android:onClick="onCheckboxClicked"
         android:shadowColor="#760B93"
@@ -187,17 +192,18 @@
         android:textSize="18sp" />
 
     <Button
-        android:id="@+id/btn_internext"
+        android:id="@+id/btn_intersave"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_marginTop="35dp"
         android:layout_marginLeft="25dp"
         android:layout_marginRight="25dp"
         android:background="@drawable/btnround"
-        android:text="@string/next"
+        android:text="SAVE"
         android:textColor="#FFFFFF"
         android:textSize="17sp"
         android:textStyle="bold"
         app:backgroundTint="#AC84D9" />
+
 
 </LinearLayout>

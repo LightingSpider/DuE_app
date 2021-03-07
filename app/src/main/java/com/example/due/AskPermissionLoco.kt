@@ -29,7 +29,7 @@ class AskPermissionLoco : AppCompatActivity() {
                 // if the dialog is cancelable
                 .setCancelable(false)
                 // positive button text and action
-                .setPositiveButton("AGREE", DialogInterface.OnClickListener {
+                .setPositiveButton("ALLOW", DialogInterface.OnClickListener {
                         dialog, id -> startActivity(Intent(this,LoadingLocactionSplashScreen::class.java))
                 })
                 // negative button text and action

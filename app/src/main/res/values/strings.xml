@@ -53,7 +53,7 @@
     <string name="that_s_how_your_profile_will_appear_to_other_due_users">That\'s how your profile will appear to other Due users</string>
     <string name="allow_location">Allow location</string>
     <string name="gender">Gender</string>
-
+    <string name="roll_dice_button">Roll</string>
     <string-array name="genders_array">
         <item>Male</item>
         <item>Female</item>

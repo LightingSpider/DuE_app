@@ -94,6 +94,13 @@ class HomePageNew : AppCompatActivity() {
                 // Like button pressed
                 val likeButton: Button = findViewById(R.id.like_button)
                 likeButton.setOnClickListener {
+                    val heart = findViewById<ImageView>(R.id.heartlove)
+                    heart.setVisibility(View.VISIBLE);
+                    heart.alpha = 0f
+                    heart.animate().setDuration(500).alpha(2f).withEndAction {
+                        overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out)
+                        heart.setVisibility(View.INVISIBLE);
+                    }
 
                     // Check if it's a match
                     if(currentUsername in displayedUser.my_likes) {
@@ -125,7 +132,7 @@ class HomePageNew : AppCompatActivity() {
                         userImagesRef.getFile(localFile)
                                 .addOnSuccessListener(OnSuccessListener<FileDownloadTask.TaskSnapshot?> {
                                     Log.d("photo", "success")
-
+                                    Thread.sleep(1000)
                                     // Display user image
                                     val userImage: ImageView = findViewById<View>(R.id.user_image) as ImageView
                                     val myBitmap = BitmapFactory.decodeFile(localFile.absolutePath)
@@ -143,11 +150,21 @@ class HomePageNew : AppCompatActivity() {
                         userAgeTextView.text = "den exei alla mounakia bro"
                     }
 
+
+
                 }
 
                 // Dislike button pressed
                 val dislikeButton: Button = findViewById(R.id.dislike_button)
                 dislikeButton.setOnClickListener {
+
+                    val hate = findViewById<ImageView>(R.id.brokenheart)
+                    hate.setVisibility(View.VISIBLE);
+                    hate.alpha = 0f
+                    hate.animate().setDuration(500).alpha(2f).withEndAction {
+                        overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out)
+                        hate.setVisibility(View.INVISIBLE);
+                    }
 
                     // Update the database about the like reaction
                     displayedUser.got_dislikes.add(currentUsername)
@@ -175,7 +192,7 @@ class HomePageNew : AppCompatActivity() {
                         userImagesRef.getFile(localFile)
                                 .addOnSuccessListener(OnSuccessListener<FileDownloadTask.TaskSnapshot?> {
                                     Log.d("photo", "success")
-
+                                    Thread.sleep(1000)
                                     // Display user image
                                     val userImage: ImageView = findViewById<View>(R.id.user_image) as ImageView
                                     val myBitmap = BitmapFactory.decodeFile(localFile.absolutePath)
@@ -198,6 +215,14 @@ class HomePageNew : AppCompatActivity() {
                 // Drink button pressed
                 val drinkButton: Button = findViewById(R.id.drink_button)
                 drinkButton.setOnClickListener {
+
+                    val cocktail_drink = findViewById<ImageView>(R.id.orangecocktail)
+                    cocktail_drink.setVisibility(View.VISIBLE);
+                    cocktail_drink.alpha = 0f
+                    cocktail_drink.animate().setDuration(500).alpha(2f).withEndAction {
+                        overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out)
+                        cocktail_drink.setVisibility(View.INVISIBLE);
+                    }
 
                     // Check if it's a match
                     if(currentUsername in displayedUser.my_likes) {
@@ -229,7 +254,7 @@ class HomePageNew : AppCompatActivity() {
                         userImagesRef.getFile(localFile)
                                 .addOnSuccessListener(OnSuccessListener<FileDownloadTask.TaskSnapshot?> {
                                     Log.d("photo", "success")
-
+                                    Thread.sleep(1000)
                                     // Display user image
                                     val userImage: ImageView = findViewById<View>(R.id.user_image) as ImageView
                                     val myBitmap = BitmapFactory.decodeFile(localFile.absolutePath)
