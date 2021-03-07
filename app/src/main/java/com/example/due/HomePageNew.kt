@@ -50,6 +50,11 @@ class HomePageNew : AppCompatActivity() {
         val currentUserId = "ZQZEsGUBpxxFvU026MeW"
         val seenUsers: ArrayList<UserInfo> = arrayListOf()
 
+        val button2 = findViewById<Button>(R.id.profile_button)
+        button2.setOnClickListener {
+            val intent2 = Intent(this,MyProfile::class.java)
+            startActivity(intent2)
+        }
 
         db.collection("test_users").whereNotEqualTo("username", currentUsername)
             .get()
