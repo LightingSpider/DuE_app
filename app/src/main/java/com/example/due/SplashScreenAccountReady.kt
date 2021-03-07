@@ -7,7 +7,7 @@ import android.os.Handler
 import android.view.WindowManager
 
 class SplashScreenAccountReady : AppCompatActivity() {
-    private val SPLASH_TIME: Long = 2500
+    private val SPLASH_TIME: Long = 2000
     override fun onCreate(savedInstanceState: Bundle?) {
         window.setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN)
         super.onCreate(savedInstanceState)

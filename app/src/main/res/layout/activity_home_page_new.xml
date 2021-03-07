@@ -88,12 +88,12 @@
 
         <Button
             android:id="@+id/messages_button"
-            android:layout_width="wrap_content"
+            android:layout_width="100dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:backgroundTint="#120031"
             android:drawableStart="@drawable/ic_baseline_chat_bubble_outline_24"
-            android:paddingStart="45dp"
+            android:paddingStart="47dp"
             tools:ignore="RtlSymmetry" />
 
         <Button

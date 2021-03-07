@@ -50,13 +50,7 @@ class HomePageNew : AppCompatActivity() {
         val currentUserId = "ZQZEsGUBpxxFvU026MeW"
         val seenUsers: ArrayList<UserInfo> = arrayListOf()
 
-        val button2 = findViewById<Button>(R.id.profile_button)
-        button2.setOnClickListener {
-            val intent2 = Intent(this,MyProfile::class.java)
-            startActivity(intent2)
-        }
-
-        db.collection("test_users").whereNotEqualTo("username", currentUsername)
+        db.collection("users").whereNotEqualTo("username", currentUsername)
             .get()
             .addOnSuccessListener { result ->
 
@@ -65,7 +59,7 @@ class HomePageNew : AppCompatActivity() {
                 // Get all nearby users
                 val users = ArrayList<UserInfo>()
                 for (document in result) {
-                    Log.d("test_users", "${document.id} => ${document.data}")
+                    Log.d("users", "${document.id} => ${document.data}")
                     val userInfo = document.toObject(UserInfo::class.java) ?: UserInfo()
                     userInfo.id = document.id
                     users.add(userInfo)
@@ -99,6 +93,8 @@ class HomePageNew : AppCompatActivity() {
                 // Like button pressed
                 val likeButton: Button = findViewById(R.id.like_button)
                 likeButton.setOnClickListener {
+
+                    // Animation
                     val heart = findViewById<ImageView>(R.id.heartlove)
                     heart.setVisibility(View.VISIBLE);
                     heart.alpha = 0f
@@ -115,7 +111,7 @@ class HomePageNew : AppCompatActivity() {
                     // Update the database about the like reaction
                     displayedUser.got_likes.add(currentUsername)
                     val data = hashMapOf("got_likes" to displayedUser.got_likes)
-                    db.collection("test_users").document(displayedUser.id)
+                    db.collection("users").document(displayedUser.id)
                             .set(data, SetOptions.merge())
                             .addOnSuccessListener {}
                             .addOnFailureListener {
@@ -137,7 +133,10 @@ class HomePageNew : AppCompatActivity() {
                         userImagesRef.getFile(localFile)
                                 .addOnSuccessListener(OnSuccessListener<FileDownloadTask.TaskSnapshot?> {
                                     Log.d("photo", "success")
+
+                                    // Sleep for 1s
                                     Thread.sleep(1000)
+
                                     // Display user image
                                     val userImage: ImageView = findViewById<View>(R.id.user_image) as ImageView
                                     val myBitmap = BitmapFactory.decodeFile(localFile.absolutePath)
@@ -152,7 +151,8 @@ class HomePageNew : AppCompatActivity() {
 
                     }
                     else{
-                        userAgeTextView.text = "den exei alla mounakia bro"
+                        val intent = Intent(this, NoMoreSuggestions::class.java)
+                        startActivity(intent)
                     }
 
 
@@ -163,6 +163,7 @@ class HomePageNew : AppCompatActivity() {
                 val dislikeButton: Button = findViewById(R.id.dislike_button)
                 dislikeButton.setOnClickListener {
 
+                    // Animation
                     val hate = findViewById<ImageView>(R.id.brokenheart)
                     hate.setVisibility(View.VISIBLE);
                     hate.alpha = 0f
@@ -171,10 +172,10 @@ class HomePageNew : AppCompatActivity() {
                         hate.setVisibility(View.INVISIBLE);
                     }
 
-                    // Update the database about the like reaction
+                    // Update the database about the dislike reaction
                     displayedUser.got_dislikes.add(currentUsername)
                     val data = hashMapOf("got_dislikes" to displayedUser.got_dislikes)
-                    db.collection("test_users").document(displayedUser.id)
+                    db.collection("users").document(displayedUser.id)
                             .set(data, SetOptions.merge())
                             .addOnSuccessListener {}
                             .addOnFailureListener {
@@ -197,7 +198,10 @@ class HomePageNew : AppCompatActivity() {
                         userImagesRef.getFile(localFile)
                                 .addOnSuccessListener(OnSuccessListener<FileDownloadTask.TaskSnapshot?> {
                                     Log.d("photo", "success")
+
+                                    // Sleep for 1s
                                     Thread.sleep(1000)
+
                                     // Display user image
                                     val userImage: ImageView = findViewById<View>(R.id.user_image) as ImageView
                                     val myBitmap = BitmapFactory.decodeFile(localFile.absolutePath)
@@ -212,7 +216,8 @@ class HomePageNew : AppCompatActivity() {
 
                     }
                     else{
-                        userAgeTextView.text = "den exei alla mounakia bro"
+                        val intent = Intent(this, NoMoreSuggestions::class.java)
+                        startActivity(intent)
                     }
 
                 }
@@ -221,6 +226,7 @@ class HomePageNew : AppCompatActivity() {
                 val drinkButton: Button = findViewById(R.id.drink_button)
                 drinkButton.setOnClickListener {
 
+                    // Animation
                     val cocktail_drink = findViewById<ImageView>(R.id.orangecocktail)
                     cocktail_drink.setVisibility(View.VISIBLE);
                     cocktail_drink.alpha = 0f
@@ -234,10 +240,10 @@ class HomePageNew : AppCompatActivity() {
                         sendNotification("Buy ${displayedUser.username} a drink")
                     }
 
-                    // Update the database about the like reaction
+                    // Update the database about the drink reaction
                     displayedUser.got_drinks.add(currentUsername)
                     val data = hashMapOf("got_drinks" to displayedUser.got_drinks)
-                    db.collection("test_users").document(displayedUser.id)
+                    db.collection("users").document(displayedUser.id)
                             .set(data, SetOptions.merge())
                             .addOnSuccessListener {}
                             .addOnFailureListener {
@@ -259,7 +265,10 @@ class HomePageNew : AppCompatActivity() {
                         userImagesRef.getFile(localFile)
                                 .addOnSuccessListener(OnSuccessListener<FileDownloadTask.TaskSnapshot?> {
                                     Log.d("photo", "success")
+
+                                    // Sleep for 1s
                                     Thread.sleep(1000)
+
                                     // Display user image
                                     val userImage: ImageView = findViewById<View>(R.id.user_image) as ImageView
                                     val myBitmap = BitmapFactory.decodeFile(localFile.absolutePath)
@@ -274,17 +283,30 @@ class HomePageNew : AppCompatActivity() {
 
                     }
                     else{
-                        userAgeTextView.text = "den exei alla mounakia bro"
+                        val intent = Intent(this, NoMoreSuggestions::class.java)
+                        startActivity(intent)
                     }
 
                 }
 
             }
             .addOnFailureListener { exception ->
-                Log.d("test_users", "Error getting documents: ", exception)
+                Log.d("users", "Error getting documents: ", exception)
             }
 
 
+        val profileBtn = findViewById<Button>(R.id.profile_button)
+        profileBtn.setOnClickListener {
+            val intent = Intent(this,MyProfile::class.java)
+            startActivity(intent)
+        }
+
+        val meesagesBtn = findViewById<Button>(R.id.messages_button)
+        meesagesBtn.setOnClickListener {
+            val intent = Intent(this, Messages::class.java)
+            startActivity(intent)
+        }
+        
     }
 
     private fun createNotificationChannel(){
@@ -305,14 +327,12 @@ class HomePageNew : AppCompatActivity() {
         }
     }
 
-
     private fun sendNotification(message: String){
 
-        val intent = Intent(this, ChatRoom::class.java).apply {
+        val intent = Intent(this, Messages::class.java).apply {
             flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
         }
 
-        val contentView = RemoteViews(packageName, R.layout.activity_chat_room)
         val pendingIntent: PendingIntent = PendingIntent.getActivity(this, 0, intent, 0)
         val bitmap = BitmapFactory.decodeResource(applicationContext.resources, R.drawable.duemylogo1)
         val bitmapLargeIcon = BitmapFactory.decodeResource(applicationContext.resources, R.drawable.duemylogo1)
