@@ -54,6 +54,12 @@
     <string name="allow_location">Allow location</string>
     <string name="gender">Gender</string>
     <string name="roll_dice_button">Roll</string>
+    <string name="save">SAVE</string>
+    <string name="instagram_m_jack">Instagram: m_jack</string>
+    <string name="facebook_jack_mil">Facebook: Jack Mil</string>
+    <string name="jack">Jack</string>
+    <string name="edit_your_profile">Edit Your Profile</string>
+    <string name="_36">36</string>
     <string-array name="genders_array">
         <item>Male</item>
         <item>Female</item>
