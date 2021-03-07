@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.view.View
 import android.view.WindowManager
 import android.widget.Button
+import android.widget.ImageView
 import android.widget.TextView
 
 class Messages : AppCompatActivity() {
@@ -26,22 +27,32 @@ class Messages : AppCompatActivity() {
             startActivity(intent2)
         }
 
-        val interestss1 = findViewById<View>(R.id.view5)
-        interestss1.setOnClickListener {
-            val intent3 = Intent(this,EditInterests::class.java)
-            startActivity(intent3)
+        val intentt = Intent(this,ChatRoom::class.java)
+
+        val int1= findViewById<ImageView>(R.id.imageView8)
+        int1.setOnClickListener {
+            startActivity(intentt)
         }
 
-        val interestss2 = findViewById<TextView>(R.id.textView27)
-        interestss2.setOnClickListener {
-            val intent4 = Intent(this,EditInterests::class.java)
-            startActivity(intent4)
+        val int2 = findViewById<View>(R.id.viewchat2)
+        int2.setOnClickListener {
+            startActivity(intentt)
         }
 
-        val interestss3 = findViewById<TextView>(R.id.textView28)
-        interestss3.setOnClickListener {
-            val intent5 = Intent(this,EditInterests::class.java)
-            startActivity(intent5)
+        val int3 = findViewById<TextView>(R.id.name2)
+        int3.setOnClickListener {
+            startActivity(intentt)
         }
+
+        val int4 = findViewById<TextView>(R.id.message2)
+        int4.setOnClickListener {
+            startActivity(intentt)
+        }
+
+        val int5 = findViewById<TextView>(R.id.place2)
+        int5.setOnClickListener {
+            startActivity(intentt)
+        }
+
     }
 }

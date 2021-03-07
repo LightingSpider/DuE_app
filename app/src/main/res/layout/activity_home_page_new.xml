@@ -53,10 +53,11 @@
 
     <ImageView
         android:id="@+id/imageView2"
-        android:layout_width="272dp"
+        android:layout_width="match_parent"
         android:layout_height="50dp"
         android:paddingTop="10dp"
         android:paddingBottom="10dp"
+        android:background="@drawable/borderfortopnavbtn"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -69,6 +70,7 @@
         android:layout_width="match_parent"
         android:layout_height="65dp"
         android:orientation="horizontal"
+        android:background="@drawable/borderfortopnavbtn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -125,7 +127,6 @@
         android:layout_width="match_parent"
         android:layout_height="350dp"
         android:layout_marginBottom="32dp"
-        android:contentDescription="TODO"
         android:scaleType="centerCrop"
         app:layout_constraintBottom_toTopOf="@+id/actions_layout"
         app:layout_constraintEnd_toEndOf="parent"
@@ -159,18 +160,18 @@
         app:layout_constraintEnd_toEndOf="@+id/user_image"
         app:layout_constraintStart_toStartOf="@+id/user_image"
         app:layout_constraintTop_toTopOf="@+id/user_image"
-        app:srcCompat="@mipmap/brokeen1_foreground" />
+        app:srcCompat="@drawable/broken_heartfinal" />
 
     <ImageView
         android:id="@+id/heartlove"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
+        android:layout_width="220dp"
+        android:layout_height="220dp"
         android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="@+id/user_image"
         app:layout_constraintEnd_toEndOf="@+id/user_image"
         app:layout_constraintTop_toTopOf="@+id/user_image"
         app:layout_constraintStart_toStartOf="@+id/user_image"
-        app:srcCompat="@drawable/heart_love" />
+        app:srcCompat="@drawable/heartfinal" />
 
     <ImageView
         android:id="@+id/orangecocktail"
@@ -181,6 +182,6 @@
         app:layout_constraintEnd_toEndOf="@+id/user_image"
         app:layout_constraintTop_toTopOf="@+id/user_image"
         app:layout_constraintStart_toStartOf="@+id/user_image"
-        app:srcCompat="@drawable/orange_cocktail" />
+        app:srcCompat="@drawable/cocktailfinal" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
