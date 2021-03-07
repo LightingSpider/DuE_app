@@ -6,16 +6,18 @@ import android.app.NotificationManager
 import android.app.PendingIntent
 import android.content.Context
 import android.content.Intent
-import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import android.graphics.Color
-import android.graphics.drawable.BitmapDrawable
 import android.os.Build
 import android.os.Bundle
+import android.os.Parcelable
 import android.util.Log
 import android.view.View
 import android.view.WindowManager
-import android.widget.*
+import android.widget.Button
+import android.widget.ImageView
+import android.widget.TextView
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.NotificationCompat
 import androidx.core.app.NotificationManagerCompat
@@ -27,6 +29,7 @@ import com.google.firebase.ktx.Firebase
 import com.google.firebase.storage.FileDownloadTask
 import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.StorageReference
+import kotlinx.android.parcel.Parcelize
 import java.io.File
 
 
@@ -34,6 +37,12 @@ class HomePageNew : AppCompatActivity() {
 
     private val CHANNEL_ID = "channel_id_exmample_01"
     private val notificationId = 101
+
+    private val db = Firebase.firestore
+    private val storageRef = FirebaseStorage.getInstance().reference;
+
+    private val currentUsername = "Jack"
+    private var seenUsers: ArrayList<UserInfo> = arrayListOf()
 
     @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -43,15 +52,11 @@ class HomePageNew : AppCompatActivity() {
 
         createNotificationChannel()
 
-        val db = Firebase.firestore
-        val storageRef = FirebaseStorage.getInstance().reference;
+        // val seenUsers = intent.getParcelableArrayListExtra<UserInfo>("seenUsers") as ArrayList<UserInfo>
 
-        val currentUsername = "Jack"
-        val currentUserId = "ZQZEsGUBpxxFvU026MeW"
-        val seenUsers: ArrayList<UserInfo> = arrayListOf()
+        Log.d("seenUsers", seenUsers.size.toString())
 
-
-        db.collection("test_users").whereNotEqualTo("username", currentUsername)
+        db.collection("users").whereNotEqualTo("username", currentUsername)
             .get()
             .addOnSuccessListener { result ->
 
@@ -60,12 +65,11 @@ class HomePageNew : AppCompatActivity() {
                 // Get all nearby users
                 val users = ArrayList<UserInfo>()
                 for (document in result) {
-                    Log.d("test_users", "${document.id} => ${document.data}")
+                    Log.d("users", "${document.id} => ${document.data}")
                     val userInfo = document.toObject(UserInfo::class.java) ?: UserInfo()
                     userInfo.id = document.id
                     users.add(userInfo)
                 }
-
 
                 val notSeenUsers = users.filter { s -> s !in seenUsers }
                 var displayedUser = notSeenUsers.shuffled().take(1)[0]
@@ -90,7 +94,6 @@ class HomePageNew : AppCompatActivity() {
                             Log.d("photo", "fail")
                         })
 
-
                 // Like button pressed
                 val likeButton: Button = findViewById(R.id.like_button)
                 likeButton.setOnClickListener {
@@ -103,7 +106,7 @@ class HomePageNew : AppCompatActivity() {
                     // Update the database about the like reaction
                     displayedUser.got_likes.add(currentUsername)
                     val data = hashMapOf("got_likes" to displayedUser.got_likes)
-                    db.collection("test_users").document(displayedUser.id)
+                    db.collection("users").document(displayedUser.id)
                             .set(data, SetOptions.merge())
                             .addOnSuccessListener {}
                             .addOnFailureListener {
@@ -140,8 +143,10 @@ class HomePageNew : AppCompatActivity() {
 
                     }
                     else{
-                        userAgeTextView.text = "den exei alla mounakia bro"
+                        val intent = Intent(this, NoMoreSuggestions::class.java)
+                        startActivity(intent)
                     }
+
 
                 }
 
@@ -152,7 +157,7 @@ class HomePageNew : AppCompatActivity() {
                     // Update the database about the like reaction
                     displayedUser.got_dislikes.add(currentUsername)
                     val data = hashMapOf("got_dislikes" to displayedUser.got_dislikes)
-                    db.collection("test_users").document(displayedUser.id)
+                    db.collection("users").document(displayedUser.id)
                             .set(data, SetOptions.merge())
                             .addOnSuccessListener {}
                             .addOnFailureListener {
@@ -190,7 +195,8 @@ class HomePageNew : AppCompatActivity() {
 
                     }
                     else{
-                        userAgeTextView.text = "den exei alla mounakia bro"
+                        val intent = Intent(this, NoMoreSuggestions::class.java)
+                        startActivity(intent)
                     }
 
                 }
@@ -207,7 +213,7 @@ class HomePageNew : AppCompatActivity() {
                     // Update the database about the like reaction
                     displayedUser.got_drinks.add(currentUsername)
                     val data = hashMapOf("got_drinks" to displayedUser.got_drinks)
-                    db.collection("test_users").document(displayedUser.id)
+                    db.collection("users").document(displayedUser.id)
                             .set(data, SetOptions.merge())
                             .addOnSuccessListener {}
                             .addOnFailureListener {
@@ -244,16 +250,30 @@ class HomePageNew : AppCompatActivity() {
 
                     }
                     else{
-                        userAgeTextView.text = "den exei alla mounakia bro"
+                        val intent = Intent(this, NoMoreSuggestions::class.java)
+                        startActivity(intent)
                     }
 
                 }
 
             }
             .addOnFailureListener { exception ->
-                Log.d("test_users", "Error getting documents: ", exception)
+                Log.d("users", "Error getting documents: ", exception)
             }
 
+        val messageBtn = findViewById<Button>(R.id.messages_button)
+        messageBtn.setOnClickListener {
+            val intent = Intent(this, Messages::class.java)
+            intent.putExtra("seenUsers", seenUsers)
+            startActivity(intent)
+        }
+
+        val profileBtn = findViewById<Button>(R.id.profile_button)
+        profileBtn.setOnClickListener {
+            val intent = Intent(this, MyProfile::class.java)
+            intent.putExtra("seenUsers", seenUsers)
+            startActivity(intent)
+        }
 
     }
 
@@ -304,6 +324,7 @@ class HomePageNew : AppCompatActivity() {
     }
 }
 
+@Parcelize
 data class UserInfo(
         var id: String = "",
         var username: String = "",
@@ -312,4 +333,4 @@ data class UserInfo(
         var got_likes: ArrayList<String> = arrayListOf(),
         var got_drinks: ArrayList<String> = arrayListOf(),
         var got_dislikes: ArrayList<String> = arrayListOf()
-)
+) : Parcelable
